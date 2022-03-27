@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment'; // Angular CLI environment
 
@@ -31,7 +33,7 @@ import { appReducers } from './app.reducer';
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
